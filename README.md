@@ -234,3 +234,17 @@ Let's add a `<pre id="file_contents"></pre>` element to load some file's data in
 
 </body>
 ```
+
+# 6 Packaging your Electron app
+
+1. Grab the `electron-packager` package
+
+```
+npm install electron-packager --save-dev
+```
+
+2. Build the Electron app into a `.app` file and it will appear in the `build/osx` file:
+
+```
+./node_modules/.bin/electron-packager . build/osx --platform=darwin
+```
