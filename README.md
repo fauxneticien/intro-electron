@@ -151,9 +151,34 @@ app.on('activate', function () {
 })
 </pre>
 
-## Run `electron .`
+## Run `./node_modules/.bin/electron .`
 
 This command calls `electron` in the current directory, and now you should see your `simple-page.html` launched as an Electron app (i.e. bundled with an instance of Chromium).
+
+### Make life easier
+
+You can also specify this long-ish command (or any others) as an npm script inside `package.json`, as shown below. So now instead of having to type `./node_modules/.bin/electron .` each time, just type `npm start`.
+
+```json
+{
+  "name": "intro-electron",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^1.7.5"
+  },
+  "dependencies": {
+    "electron": "^1.7.5"
+  },
+  "description": ""
+}
+```
 
 # 4. Some filesystem I/O with `node`
 
